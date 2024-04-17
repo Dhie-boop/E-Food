@@ -38,7 +38,7 @@ def add_reviews(request):
 
         reviews = Reviews(user=user, item=item, review=review, rslug=rslug)
         reviews.save()
-        messages.success(request, "Thankyou for reviewing this product!!")
+        messages.success(request, "Thank You for Reviewing this Item!!")
     return redirect(f"/dishes/{item.slug}")
 
 class ItemCreateView(LoginRequiredMixin, CreateView):

@@ -18,10 +18,10 @@
               {% if item.description %}
               <h5>{{ item.description }}</h5>
               {% endif %}
-              <h3>₹ {{ item.price }} per box of {{ item.pieces}} pieces</h3>
+              <h3>Ugx {{ item.price }} per order of {{ item.pieces}} pieces</h3>
               <h4>{{ item.instructions }}</h4>
             </div>
-            <a href="{% url 'main:add-to-cart' item.slug %}" class="btn btn-primary btn-md my-0 p">Add to cart</a>
+            <a href="{% url 'main:add-to-cart' item.slug %}" class="btn btn-success btn-md my-0 p">Add to cart</a>
           </div>
         </div>
       </div>
