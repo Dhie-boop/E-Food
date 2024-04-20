@@ -2,8 +2,7 @@
 
 import datetime
 from django.db import migrations, models
-from django.utils.timezone import utc
-
+from django.utils import timezone
 
 class Migration(migrations.Migration):
 
@@ -15,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='cartitems',
             name='ordered_date',
-            field=models.DateField(default=datetime.datetime(2020, 7, 25, 21, 24, 20, 14250, tzinfo=utc)),
+            field=models.DateField(default=timezone.now),
         ),
     ]

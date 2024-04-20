@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import django.utils.timezone
+from django.utils import timezone
 
 
 class Migration(migrations.Migration):
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('ordered', models.BooleanField(default=False)),
                 ('quantity', models.IntegerField(default=1)),
                 ('specifications', models.CharField(default='Non-Jain/Medium Spicy', max_length=200)),
-                ('delivery_date', models.DateField(default=django.utils.timezone.now, max_length=100)),
+                ('delivery_date', models.DateField(default=timezone.now, max_length=100)),
                 ('item', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.Item')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

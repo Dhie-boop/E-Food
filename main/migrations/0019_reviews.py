@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import django.utils.timezone
+from django.utils import timezone
 
 
 class Migration(migrations.Migration):
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('rslug', models.SlugField(default='sushi-slug')),
                 ('review', models.TextField()),
-                ('posted_on', models.DateField(default=django.utils.timezone.now)),
+                ('posted_on', models.DateField(default=timezone.now)),
                 ('item', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.Item')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
